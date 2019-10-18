@@ -1,17 +1,36 @@
-/*
- * В этом задании надо разработать функцию
- * `convertBytesToHuman`. Эта функция  должна принимать
- * аргумент `bytes` только числового типа.
- * На выходе функция должна отдать
- * человекопонятную строку, которая будет
- * отражать размер файла. Примеры использования:
- * `convertBytesToHuman(1024) === '1 KB';`
- * `convertBytesToHuman(123123123) === '117.42 MB';`
- * Необходимо предусмотреть защиту от
- * передачи аргументов неправильного типа
- * и класса (например, отрицательные числа)
- */
-
-export default function convertBytesToHuman(bytes) {
-  // your solution goes here
-}
+export default function convertBytesToHuman(bytes) { 
+     if ((typeof bytes == "number") && (bytes >= 0)){
+      if (bytes < 1024){
+        var bytes2 = bytes + " байт";
+      }
+      else{
+        var bytes1 = bytes/1024;
+        var T = bytes1;
+        if (bytes1 < 1024){
+          var bytes2 = bytes1.toFixed(2) +" Кб";
+        }
+        else{
+          var bytes1 = T/1024;
+          var T = bytes1;
+          if (bytes1 < 1024){
+            var bytes2 = bytes1.toFixed(2) + " Гб";
+          }
+          else{
+            var bytes1 = T/1024;
+            var T = bytes1;
+            if (bytes1 < 1024){
+              var bytes2 = bytes1.toFixed(2) + " Мб";
+            }
+            else{
+              var bytes1 = T/1024;
+              var bytes2 = bytes1.toFixed(2) + " Тб";
+            }
+          }
+        }
+      }
+    }
+    else{
+      var bytes2 = 'false';
+    }
+    return bytes2;
+  }

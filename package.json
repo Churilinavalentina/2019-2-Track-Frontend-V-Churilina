@@ -1,6 +1,6 @@
 {
-  "name": "track-mail-2019-velentina",
-  "homepage": "https://your_gh_login.github.io/your_repo_name",
+  "name": "track-mail-2019-valentina",
+  "homepage": "https://churilinavalentina.github.io/track-mail-2019-valentina",
   "description": "Mail.Ru Group Frontend Track course, 2019",
   "version": "0.1.0",
   "author": "Velentina",
@@ -81,7 +81,7 @@
     "lint": "npm run lint:js && npm run lint:dup && npm run lint:css",
     "lint-fix": "eslint --fix",
     "clean": "rm -rf dist",
-    "test": "npm run test:engine && npm run test:unit && npm run lint",
+    "test": "CI=true npm run test:engine && npm run test:unit && npm run lint",
     "test:engine": "check-engine",
     "test:sec": "npm audit || true",
     "test:unit": "cross-env NODE_ENV=test jest",
